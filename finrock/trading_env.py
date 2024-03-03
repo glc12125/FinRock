@@ -158,7 +158,7 @@ class TradingEnv:
         """
         size = len(self._data_feeder) - self._max_episode_steps
         self._env_start_index = np.random.randint(0, size) if size > 0 else 0
-        self._env_step_indexes = list(range(self._env_start_index, self._env_start_index + self._max_episode_steps))
+        self._env_step_indexes = list(range(self._env_start_index, self._env_start_index + min(len(self._data_feeder), self._max_episode_steps)))
 
         # Initial observations are the first states of the window size
         self._observations.reset()

@@ -22,9 +22,23 @@ class State:
         self.indicators = indicators
 
         try:
+            #print(datetime.fromtimestamp(int(timestamp)))
             self.date = datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
         except ValueError:
-            raise ValueError(f'received invalid timestamp date format: {timestamp}, expected: YYYY-MM-DD HH:MM:SS')
+            try:
+                #print(datetime.fromtimestamp(int(timestamp)))
+                self.date = datetime.fromtimestamp(int(timestamp))
+                #print("self.date: {}".format(self.date))
+            except:
+                raise ValueError(f'cannot convert {timestamp} to string date format: YYYY-MM-DD HH:MM:SS')
+        except:
+            try:
+                #print(datetime.fromtimestamp(int(timestamp)))
+                self.date = datetime.fromtimestamp(int(timestamp))
+                #print("self.date: {}".format(self.date))
+            except:
+                raise ValueError(f'received invalid timestamp date format: {timestamp}, expected: YYYY-MM-DD HH:MM:SS')
+            
         
         self._balance = 0.0 # balance in cash
         self._assets = 0.0 # balance in assets

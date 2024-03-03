@@ -346,4 +346,12 @@ class PygameRender:
         label_y_high = font.render(str(max_high), True, self.color_theme.text)
         canvas.blit(label_y_high, (self.candle_spacing + 5, label_height))
 
+        index = self._states.index(state)
+        if index > 0:
+            last_state = self._states[index - 1]
+
+            account_width, account_height = font.size(str(int(last_state.account_value)))
+            account_value_render = font.render(str(int(last_state.account_value)), True, self.color_theme.text)
+            canvas.blit(account_value_render, (self.candle_spacing + 5, account_height*2))
+
         return canvas

@@ -19,8 +19,10 @@ from rockrl.utils.memory import MemoryManager
 from rockrl.tensorflow import PPOAgent
 from rockrl.utils.vectorizedEnv import VectorizedEnv
 
-df = pd.read_csv('Datasets/random_sinusoid.csv')
-df = df[:-1000] # leave 1000 for testing
+#df = pd.read_csv('Datasets/random_sinusoid.csv')
+#df = df[:-1000] # leave 1000 for testing
+df = pd.read_csv('gateio/4h/4h_BTC_USDT-202101-202402.csv')
+df = df[:-690] # leave 1000 for testing
 
 pd_data_feeder = PdDataFeeder(
     df,
