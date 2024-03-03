@@ -40,11 +40,16 @@ experiments/testing_ppo_sinusoid.py
 - [Included metrics and indicators into environment](https://youtu.be/bGpBEnKzIdo)
 
 # TODO:
-- [ ] Train model on `continuous` actions (control allocation percentage)
+- [x] Train model on `continuous` actions (control allocation percentage)
 - [ ] Add more indicators
 - [ ] Add more metrics
 - [ ] Add more reward functions
 - [ ] Add more scalers
-- [ ] Train RL agent on real data
+- [x] Train RL agent on real data
 - [ ] Add more RL algorithms
 - [ ] Refactor rendering, maybe move to browser?
+
+# metrics on BTC_USDT trading pair
+account_value 1636.1716694009654
+max_drawdown -0.09478497469028849
+sharpe_ratio 4.430119965160728
